@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const ckeditor = document.querySelector('#ckeditor');
   const  select2_single = document.querySelectorAll('.select2-single');
   const  select2_multiple = document.querySelectorAll('.select2-multiple');
+  var inputTags = document.querySelector('.input-tagify');
 
   
   // Preloader for first-time visitors
@@ -382,11 +383,8 @@ renderVariants();
 
 
 // initialize Tagify
-var inputTags = document.querySelector('.input-tagify');
-
 if(inputTags){
-  var tagify = new Tagify(inputTags);
-  tagify.DOM.input.blur();
+new Tagify(inputTags);
 }
 
 if(printInvoicetButton){
@@ -740,9 +738,7 @@ document.addEventListener('keydown', function(e) {
         updateVolumeFill();
     }
 });
-  }
-
- 
+}
 
 
 });
