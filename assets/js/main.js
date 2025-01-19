@@ -162,16 +162,33 @@ if(overlay){
 }
 
 
-
 // Function to close the sidebar
 function closeSidebar() {
   sidebar.style.width = "0";
   sidebar.style.display = "none";
   sidebar.style.zIndex = "0";
   overlay.style.display = "none";
-  mobileOverlayVisible = false;
+  mobileOverlayVisible = true;
 }
 
+const handleResize = () => {
+  if (window.innerWidth >= 993) {
+    // Automatically show the sidebar for widths >= 993
+    sidebar.style.width = "18rem";
+    sidebar.style.display = "block";
+    overlay.style.display = "none";
+    mobileOverlayVisible = false;
+  } else {
+    // Automatically hide the sidebar for widths < 993
+    closeSidebar();
+  }
+};
+
+// Attach the resize event listener
+window.addEventListener("resize", handleResize);
+
+// Initial check on page load
+handleResize();
 
 
 if (selectAllCheckbox) {
