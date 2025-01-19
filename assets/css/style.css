@@ -27,7 +27,6 @@ Url                  : https://www.templaterise.com/template/metrox-ecommerce-ad
     --text-color-2: #364A63;
     --text-color-3: #8094AE;
 }
-
   
 body {
     font-family: Poppins;
@@ -253,7 +252,7 @@ a {
   }
 
 
-.sidebar.collapsed {
+/* .sidebar.collapsed {
   width: 5rem; 
 }
 
@@ -264,7 +263,7 @@ a {
 .sidebar.collapsed .sidebar-link i {
   text-align: center;
   margin: 0 auto;
-}
+} */
 
 .sm-logo {
   display: none;
@@ -277,13 +276,13 @@ a {
 }
 
 
-.sidebar.collapsed .sm-logo {
+/* .sidebar.collapsed .sm-logo {
   display: block;
 }
 
 .sidebar.collapsed .lg-logo {
   display: none;
-}
+} */
 
 
 .submenu-link.active{
@@ -527,6 +526,7 @@ input::placeholder {
     width: 100%;
   }
 }
+
 
 @media (max-width: 993px) {
   .header {
@@ -1534,3 +1534,80 @@ table tr th:last-child, table tr td:last-child {
   box-shadow: none;
   outline: none;
 }
+
+
+
+/* Sidebar expanded state */
+.sidebar-visible {
+  width: 18rem;
+  display: block;
+  z-index: 9999;
+  transition: width 0.3s;
+}
+
+/* Sidebar collapsed state */
+.sidebar-collapsed {
+  width: 5rem;
+  transition: width 0.3s;
+}
+
+/* Collapsed sidebar state */
+.sidebar-collapsed .lg-logo {
+  display: none;
+}
+
+.sidebar-collapsed .sm-logo {
+  display: block;
+}
+
+/* Overlay visible */
+.overlay-visible {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: block;
+  transition: opacity 0.3s;
+}
+
+/* Overlay hidden */
+.overlay-hidden {
+  display: none;
+}
+
+/* Icon rotation */
+.icon-rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s;
+}
+
+/* Icon default */
+.icon-default {
+  transform: rotate(0deg);
+  transition: transform 0.3s;
+}
+
+/* Header adjustments */
+.header-expanded {
+  width: calc(100% - 18rem);
+  left: 18rem;
+}
+
+.header-collapsed {
+  width: calc(100% - 5rem);
+  left: 5rem;
+}
+
+/* Collapse main content */
+.collapse-main-expanded {
+  margin-left: 18rem;
+}
+
+.collapse-main-collapsed {
+  margin-left: 5rem;
+}
+
+
